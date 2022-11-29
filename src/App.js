@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Components/Navbar';
 import BookList from './Components/BookList';
 import ThemeContextProvider from './contexts/ThemeContext';
+import ThemeToggle from './Components/ThemeToggle';
 
 function App() {
   //booklist and navbar are attached to props of parent component
@@ -10,6 +11,7 @@ function App() {
       <ThemeContextProvider>
         <Navbar />
         <BookList />
+        <ThemeToggle />
       </ThemeContextProvider>
     </div>
   );

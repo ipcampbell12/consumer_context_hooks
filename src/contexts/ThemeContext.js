@@ -11,13 +11,17 @@ class ThemeContextProvider extends Component {
         dark: { syntax: '#ddd', ui: '#333', bg: '#555' }
     }
 
+    toggleTheme = () => {
+        this.setState({ isLightTheme: !this.state.isLightTheme });
+    }
+
 
     render() {
         //value property takes any data we want to provide
         //...this.state = takes all of the properties inside state and spreads them in object
         //children refers to booklist and navbar components - the ones being wrapped
         return (
-            <ThemeContext.Provider value={{ ...this.state }}>
+            <ThemeContext.Provider value={{ ...this.state, toggleTheme: this.toggleTheme }}>
                 {this.props.children}
             </ThemeContext.Provider>
         );

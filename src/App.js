@@ -3,16 +3,19 @@ import Navbar from './Components/Navbar';
 import BookList from './Components/BookList';
 import ThemeContextProvider from './contexts/ThemeContext';
 import ThemeToggle from './Components/ThemeToggle';
+import AuthContextProvider from './contexts/AuthContext';
 
 function App() {
   //booklist and navbar are attached to props of parent component
   return (
     <div className="App">
-      <ThemeContextProvider>
-        <Navbar />
-        <BookList />
-        <ThemeToggle />
-      </ThemeContextProvider>
+      <AuthContextProvider>
+        <ThemeContextProvider>
+          <Navbar />
+          <BookList />
+          <ThemeToggle />
+        </ThemeContextProvider>
+      </AuthContextProvider>
     </div>
   );
 }
